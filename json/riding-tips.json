@@ -1,0 +1,34 @@
+{
+  "tips": [
+    {
+      "icon": "🎮",
+      "title": "Master the Controls",
+      "description": "Use arrow keys or WASD to control your sleigh. Lean into turns and use the brake wisely to maintain control on icy surfaces."
+    },
+    {
+      "icon": "🎁",
+      "title": "Collect Gifts",
+      "description": "Gather presents along the track to earn points and unlock special abilities. Some gifts contain power-ups that can help you race faster."
+    },
+    {
+      "icon": "⏱️",
+      "title": "Beat the Clock",
+      "description": "Complete tracks within the time limit to unlock new levels. Practice makes perfect - learn the optimal racing lines."
+    },
+    {
+      "icon": "🌲",
+      "title": "Avoid Obstacles",
+      "description": "Watch out for trees, rocks, and other obstacles. Use your sleigh's agility to navigate through tight spaces safely."
+    },
+    {
+      "icon": "⚡",
+      "title": "Use Power-ups",
+      "description": "Activate speed boosts, shields, and other power-ups strategically to gain an advantage over your competitors."
+    },
+    {
+      "icon": "🏆",
+      "title": "Compete for Records",
+      "description": "Try to beat your best times and compete with friends for the fastest lap records on each track."
+    }
+  ]
+}

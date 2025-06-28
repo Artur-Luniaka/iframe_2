@@ -1,0 +1,15 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#frost)">
+<path d="M8 32C16 40 32 40 40 32" stroke="#fbbf24" stroke-width="3" stroke-linecap="round"/>
+<circle cx="16" cy="36" r="2" fill="#f59e0b"/>
+<circle cx="24" cy="38" r="2" fill="#38bdf8"/>
+<circle cx="32" cy="36" r="2" fill="#16a34a"/>
+<circle cx="12" cy="32" r="1.5" fill="#bae6fd"/>
+<circle cx="36" cy="32" r="1.5" fill="#bae6fd"/>
+</g>
+<defs>
+<filter id="frost" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse">
+<feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#bae6fd"/>
+</filter>
+</defs>
+</svg> 

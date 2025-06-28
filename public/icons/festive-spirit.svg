@@ -1,0 +1,15 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#frost)">
+<polygon points="24,8 36,28 12,28" fill="#16a34a"/>
+<polygon points="24,16 32,32 16,32" fill="#4ade80"/>
+<circle cx="24" cy="36" r="4" fill="#f59e0b"/>
+<circle cx="24" cy="12" r="2" fill="#fbbf24"/>
+<circle cx="18" cy="26" r="1.5" fill="#38bdf8"/>
+<circle cx="30" cy="26" r="1.5" fill="#38bdf8"/>
+</g>
+<defs>
+<filter id="frost" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse">
+<feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#bae6fd"/>
+</filter>
+</defs>
+</svg> 

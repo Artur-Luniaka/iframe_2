@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Christmas Sledge Rider 3D</title>
+    <link rel="stylesheet" href="styles/frost-styles.css" />
+  </head>
+  <body>
+    <div id="snow-container"></div>
+
+    <main class="sleigh-main">
+      <!-- Contact Information Section -->
+      <section class="northpole-info">
+        <div class="frost-container">
+          <h1 class="ice-heading">Contact the North Pole</h1>
+          <div class="contact-snow-grid">
+            <div class="contact-snow-card">
+              <h2 class="frost-contact-title">Get in Touch</h2>
+              <div id="contact-info-container" class="contact-info-list">
+                <!-- Content loaded from JSON -->
+              </div>
+            </div>
+            <div class="contact-snow-card">
+              <h2 class="frost-contact-title">Our Location</h2>
+              <div class="map-container">
+                <div id="northpole-map" class="frost-map">
+                  <!-- Map will be embedded here -->
+                  <div class="map-placeholder">
+                    <p class="snow-map-text">Northern Finland</p>
+                    <p class="snow-map-coords">68°N, 27°E</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="sleigh-contact-form">
+        <div class="frost-container">
+          <h2 class="ice-heading">Send Us a Message</h2>
+          <form class="frost-form" id="contact-form">
+            <div class="form-snow-group">
+              <label for="sleigh-name" class="frost-label">Your Name</label>
+              <input
+                type="text"
+                id="sleigh-name"
+                name="name"
+                class="snow-input"
+                required
+              />
+            </div>
+            <div class="form-snow-group">
+              <label for="sleigh-phone" class="frost-label">Phone Number</label>
+              <input
+                type="tel"
+                id="sleigh-phone"
+                name="phone"
+                class="snow-input"
+                required
+              />
+            </div>
+            <div class="form-snow-group">
+              <label for="sleigh-message" class="frost-label">Message</label>
+              <textarea
+                id="sleigh-message"
+                name="message"
+                class="snow-textarea"
+                rows="5"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="frost-submit-btn">Send Message</button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/frost-script.js"></script>
+  </body>
+</html>

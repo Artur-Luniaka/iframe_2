@@ -1,0 +1,13 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#frost)">
+<circle cx="32" cy="24" r="10" fill="#bae6fd"/>
+<path d="M10 24H28" stroke="#0ea5e9" stroke-width="3" stroke-linecap="round"/>
+<path d="M14 18H24" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+<path d="M14 30H24" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+</g>
+<defs>
+<filter id="frost" x="0" y="0" width="48" height="48" filterUnits="userSpaceOnUse">
+<feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#bae6fd"/>
+</filter>
+</defs>
+</svg> 
