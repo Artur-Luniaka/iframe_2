@@ -90,71 +90,6 @@ async function loadHeaderAndFooter() {
   }
 }
 
-// Create snowfall animation
-function createSnowfallEffect() {
-  const snowContainer = document.getElementById("snow-container");
-  if (!snowContainer) return;
-
-  const createSnowflake = () => {
-    const snowflake = document.createElement("div");
-    snowflake.className = "snowflake";
-    snowflake.style.cssText = `
-            position: absolute;
-            width: ${Math.random() * 4 + 2}px;
-            height: ${Math.random() * 4 + 2}px;
-            background: white;
-            border-radius: 50%;
-            opacity: ${Math.random() * 0.7 + 0.3};
-            left: ${Math.random() * 100}%;
-            top: -10px;
-            pointer-events: none;
-            z-index: 1;
-        `;
-
-    snowContainer.appendChild(snowflake);
-    snowflakeCollection.push(snowflake);
-
-    const fallDuration = Math.random() * 3000 + 5000;
-    const fallDistance = window.innerHeight + 20;
-
-    const fallAnimation = () => {
-      const startTime = Date.now();
-
-      const animate = () => {
-        const elapsed = Date.now() - startTime;
-        const progress = elapsed / fallDuration;
-
-        if (progress < 1) {
-          snowflake.style.top = `${progress * fallDistance}px`;
-          snowflake.style.left = `${
-            parseFloat(snowflake.style.left) +
-            Math.sin(progress * Math.PI * 2) * 0.5
-          }%`;
-          requestAnimationFrame(animate);
-        } else {
-          snowflake.remove();
-          const index = snowflakeCollection.indexOf(snowflake);
-          if (index > -1) {
-            snowflakeCollection.splice(index, 1);
-          }
-        }
-      };
-
-      requestAnimationFrame(animate);
-    };
-
-    setTimeout(fallAnimation, Math.random() * 2000);
-  };
-
-  // Create initial snowflakes
-  for (let i = 0; i < 20; i++) {
-    setTimeout(createSnowflake, Math.random() * 3000);
-  }
-
-  // Continue creating snowflakes
-  setInterval(createSnowflake, 500);
-}
-
 // Setup mobile menu functionality
 function setupMobileMenu() {
   const burgerBtn = document.getElementById("burger-snow-btn");
@@ -266,7 +201,7 @@ function renderShoutsCarousel(direction = 0) {
   const next = (shoutsCurrent + 1) % shoutsTotal;
   // Показываем только три карточки
   html += `
-    <div class=\"shouts-card shouts-card-side\">\n      <div class=\"shouts-card-name\">🎅 <span>${shoutsData[prev].name}</span></div>\n      <div class=\"shouts-card-text\">${shoutsData[prev].text}</div>\n    </div>\n  `;
+    <div class=\"shouts-card shouts-card-side\">\n      <div class=\"shouts-card-name\">�� <span>${shoutsData[prev].name}</span></div>\n      <div class=\"shouts-card-text\">${shoutsData[prev].text}</div>\n    </div>\n  `;
   html += `
     <div class=\"shouts-card main-shouts-card\">\n      <div class=\"shouts-card-name\">🎅 <span>${shoutsData[shoutsCurrent].name}</span></div>\n      <div class=\"shouts-card-text\">${shoutsData[shoutsCurrent].text}</div>\n    </div>\n  `;
   html += `
@@ -406,11 +341,18 @@ async function loadUpdates() {
     container.innerHTML = updatesData.updates
       .map(
         (update) => `
-            <div class="feature-snow-card">
-                <div class="snow-icon">❄️</div>
-                <h3 class="frost-feature-title">${update.title}</h3>
-                <p class="snow-description">${update.content}</p>
-                <small class="snow-date">${update.date}</small>
+            <div class="frozen-update-card">
+                <div class="frozen-update-image">
+                    <img src="public/${update.image}" alt="${update.title}" class="frozen-img" />
+                    <div class="frozen-overlay"></div>
+                </div>
+                <div class="frozen-update-content">
+                    <div class="frozen-update-header">
+                        <h3 class="frozen-update-title">${update.title}</h3>
+                        <span class="frozen-update-date">${update.date}</span>
+                    </div>
+                    <p class="frozen-update-text">${update.content}</p>
+                </div>
             </div>
         `
       )
@@ -432,11 +374,16 @@ async function loadNotes() {
     container.innerHTML = notesData.notes
       .map(
         (note) => `
-            <div class="feature-snow-card">
-                <div class="snow-icon">🎄</div>
-                <h3 class="frost-feature-title">${note.title}</h3>
-                <p class="snow-description">${note.content}</p>
-                <small class="snow-date">${note.date}</small>
+            <div class="claus-note-card">
+                <div class="claus-note-icon">🎄</div>
+                <div class="claus-note-content">
+                    <h3 class="claus-note-title">${note.title}</h3>
+                    <p class="claus-note-text">${note.content}</p>
+                    <div class="claus-note-meta">
+                        <span class="claus-note-date">${note.date}</span>
+                        <div class="claus-note-badge">Claus Tip</div>
+                    </div>
+                </div>
             </div>
         `
       )
@@ -456,16 +403,35 @@ async function loadContactInfo() {
     if (!container) return;
 
     container.innerHTML = `
-            <div class="contact-info-item">
-                <strong>Email:</strong> <a href="mailto:${contactData.email}" class="footer-snow-link">${contactData.email}</a>
-            </div>
-            <div class="contact-info-item">
-                <strong>Phone:</strong> <a href="tel:${contactData.phone}" class="footer-snow-link">${contactData.phone}</a>
-            </div>
-            <div class="contact-info-item">
-                <strong>Address:</strong> ${contactData.address}
-            </div>
-        `;
+      <div class="contact-info-item">
+        <div class="contact-item-icon">📧</div>
+        <div class="contact-item-content">
+          <h3 class="contact-item-title">Email</h3>
+          <a href="mailto:${contactData.email}" class="contact-item-link">${contactData.email}</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-item-icon">📞</div>
+        <div class="contact-item-content">
+          <h3 class="contact-item-title">Phone</h3>
+          <a href="tel:${contactData.phone}" class="contact-item-link">${contactData.phone}</a>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-item-icon">📍</div>
+        <div class="contact-item-content">
+          <h3 class="contact-item-title">Address</h3>
+          <span class="contact-item-text">${contactData.address}</span>
+        </div>
+      </div>
+      <div class="contact-info-item">
+        <div class="contact-item-icon">⏰</div>
+        <div class="contact-item-content">
+          <h3 class="contact-item-title">Business Hours</h3>
+          <span class="contact-item-text">Monday - Friday: 9:00 AM - 6:00 PM (GMT+2)</span>
+        </div>
+      </div>
+    `;
   } catch (error) {
     console.error("Failed to load contact info:", error);
   }
@@ -507,44 +473,62 @@ function setupContactForm() {
 
 // Show success message
 function showSuccessMessage() {
+  // Прокрутка вверх
+  window.scrollTo({ top: 0, behavior: "smooth" });
+
   const successMessage = document.createElement("div");
   successMessage.className = "success-snow-message";
+  successMessage.innerHTML = `
+    <span class="success-snow-icon">🎉</span>
+    <span class="success-snow-text">Message sent successfully!</span>
+  `;
   successMessage.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: var(--reindeer-track);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 10px;
-        box-shadow: var(--reindeer-bounce);
-        z-index: 10000;
-        animation: slideInRight 0.5s ease-out;
-    `;
-  successMessage.textContent = "Message sent successfully! 🎅";
+    position: fixed;
+    left: 50%;
+    bottom: 32px;
+    transform: translateX(-50%) translateY(100%);
+    min-width: 260px;
+    max-width: 90vw;
+    background: linear-gradient(90deg, var(--frost-panel), var(--ice-crystal));
+    color: #fff;
+    padding: 1.1rem 2.2rem;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(30,58,138,0.18);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.15rem;
+    font-weight: 600;
+    animation: slideUpSnow 0.6s cubic-bezier(.4,1.6,.6,1) forwards;
+  `;
 
   document.body.appendChild(successMessage);
 
   setTimeout(() => {
-    successMessage.style.animation = "slideOutRight 0.5s ease-in";
+    successMessage.style.animation =
+      "slideDownSnow 0.5s cubic-bezier(.4,1.6,.6,1) forwards";
     setTimeout(() => {
       successMessage.remove();
     }, 500);
   }, 3000);
 }
 
-// Add CSS animations for success message
+// Добавляю новые анимации для уведомления
 const style = document.createElement("style");
 style.textContent = `
-    @keyframes slideInRight {
-        from { transform: translateX(100%); opacity: 0; }
-        to { transform: translateX(0); opacity: 1; }
-    }
-    
-    @keyframes slideOutRight {
-        from { transform: translateX(0); opacity: 1; }
-        to { transform: translateX(100%); opacity: 0; }
-    }
+@keyframes slideUpSnow {
+  from { transform: translateX(-50%) translateY(100%); opacity: 0; }
+  to { transform: translateX(-50%) translateY(0); opacity: 1; }
+}
+@keyframes slideDownSnow {
+  from { transform: translateX(-50%) translateY(0); opacity: 1; }
+  to { transform: translateX(-50%) translateY(100%); opacity: 0; }
+}
+.success-snow-message .success-snow-icon {
+  font-size: 1.5em;
+  filter: drop-shadow(0 2px 6px #fff8);
+}
 `;
 document.head.appendChild(style);
 
@@ -618,3 +602,17 @@ window.initializeWinterWonderland = function () {
   origInit();
   setupFrostMapPopup();
 };
+
+// Cookie bar logic
+function setupCookieBar() {
+  const bar = document.getElementById("cookie-bar");
+  const btn = document.getElementById("cookie-accept-btn");
+  if (!bar || !btn) return;
+  if (localStorage.getItem("cookieAccepted") === "yes") return;
+  bar.style.display = "block";
+  btn.addEventListener("click", function () {
+    localStorage.setItem("cookieAccepted", "yes");
+    bar.style.display = "none";
+  });
+}
+document.addEventListener("DOMContentLoaded", setupCookieBar);

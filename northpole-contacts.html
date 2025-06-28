@@ -3,33 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Us - Christmas Sledge Rider 3D</title>
+    <title>RiskSkillNet.com - Contact Us</title>
     <link rel="stylesheet" href="styles/frost-styles.css" />
+    <link rel="icon" type="image/png" href="public/favicon.ico" />
+    <meta
+      name="description"
+      content="Contact RiskSkillNet.com for support, questions, or feedback. We're here to help you with your winter racing adventure!"
+    />
   </head>
   <body>
     <div id="snow-container"></div>
 
     <main class="sleigh-main">
-      <!-- Contact Information Section -->
-      <section class="northpole-info">
+      <!-- Hero Contact Section -->
+      <section class="contact-hero-section">
         <div class="frost-container">
-          <h1 class="ice-heading">Contact the North Pole</h1>
-          <div class="contact-snow-grid">
-            <div class="contact-snow-card">
-              <h2 class="frost-contact-title">Get in Touch</h2>
-              <div id="contact-info-container" class="contact-info-list">
-                <!-- Content loaded from JSON -->
+          <div class="contact-hero-content">
+            <h1 class="contact-hero-title">Contact the North Pole</h1>
+            <p class="contact-hero-subtitle">
+              Ready to start your winter adventure? Get in touch with our team!
+            </p>
+            <div class="contact-hero-stats">
+              <div class="contact-stat">
+                <div class="contact-stat-icon">📧</div>
+                <div class="contact-stat-info">
+                  <span class="contact-stat-label">Email Response</span>
+                  <span class="contact-stat-value">Within 24 hours</span>
+                </div>
               </div>
-            </div>
-            <div class="contact-snow-card">
-              <h2 class="frost-contact-title">Our Location</h2>
-              <div class="map-container">
-                <div id="northpole-map" class="frost-map">
-                  <!-- Map will be embedded here -->
-                  <div class="map-placeholder">
-                    <p class="snow-map-text">Northern Finland</p>
-                    <p class="snow-map-coords">68°N, 27°E</p>
-                  </div>
+              <div class="contact-stat">
+                <div class="contact-stat-icon">📞</div>
+                <div class="contact-stat-info">
+                  <span class="contact-stat-label">Phone Support</span>
+                  <span class="contact-stat-value">24/7 Available</span>
+                </div>
+              </div>
+              <div class="contact-stat">
+                <div class="contact-stat-icon">🌍</div>
+                <div class="contact-stat-info">
+                  <span class="contact-stat-label">Global Support</span>
+                  <span class="contact-stat-value">Worldwide</span>
                 </div>
               </div>
             </div>
@@ -37,43 +50,114 @@
         </div>
       </section>
 
-      <!-- Contact Form Section -->
-      <section class="sleigh-contact-form">
+      <!-- Contact Information & Map Section -->
+      <section class="contact-info-map-section">
         <div class="frost-container">
-          <h2 class="ice-heading">Send Us a Message</h2>
-          <form class="frost-form" id="contact-form">
-            <div class="form-snow-group">
-              <label for="sleigh-name" class="frost-label">Your Name</label>
-              <input
-                type="text"
-                id="sleigh-name"
-                name="name"
-                class="snow-input"
-                required
-              />
+          <div class="contact-info-map-grid">
+            <!-- Contact Information Card -->
+            <div class="contact-info-card">
+              <div class="contact-info-header">
+                <h2 class="contact-info-title">Get in Touch</h2>
+                <div class="contact-info-icon">🎅</div>
+              </div>
+              <div id="contact-info-container" class="contact-info-content">
+                <!-- Content loaded from JSON -->
+              </div>
+              <div class="contact-info-footer">
+                <div class="contact-social-links">
+                  <a href="#" class="contact-social-link">
+                    <span class="social-icon">📧</span>
+                    <span>Email</span>
+                  </a>
+                  <a href="./#contact-form-section" class="contact-social-link">
+                    <span class="social-icon">📝</span>
+                    <span>Web Form</span>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="form-snow-group">
-              <label for="sleigh-phone" class="frost-label">Phone Number</label>
-              <input
-                type="tel"
-                id="sleigh-phone"
-                name="phone"
-                class="snow-input"
-                required
-              />
+
+            <!-- Map Card -->
+            <div class="contact-map-card">
+              <div class="contact-map-header">
+                <h2 class="contact-map-title">Our Location</h2>
+                <div class="contact-map-icon">🗺️</div>
+              </div>
+              <div class="contact-map-container">
+                <iframe
+                  src="https://www.google.com/maps?q=8+Franklin+Street,+Melbourne+VIC,+Australia&hl=en&output=embed"
+                  width="100%"
+                  height="400"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  class="contact-map-iframe"
+                >
+                </iframe>
+              </div>
             </div>
-            <div class="form-snow-group">
-              <label for="sleigh-message" class="frost-label">Message</label>
-              <textarea
-                id="sleigh-message"
-                name="message"
-                class="snow-textarea"
-                rows="5"
-                required
-              ></textarea>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Form Section -->
+      <section class="contact-form-section" id="contact-form-section">
+        <div class="frost-container">
+          <div class="contact-form-wrapper">
+            <div class="contact-form-header">
+              <h2 class="contact-form-title">Send Us a Message</h2>
+              <p class="contact-form-subtitle">
+                Have questions about our winter racing game? We'd love to hear
+                from you!
+              </p>
             </div>
-            <button type="submit" class="frost-submit-btn">Send Message</button>
-          </form>
+            <form class="contact-form" id="contact-form">
+              <div class="form-grid">
+                <div class="form-snow-group">
+                  <label for="sleigh-name" class="frost-label">Your Name</label>
+                  <input
+                    type="text"
+                    id="sleigh-name"
+                    name="name"
+                    class="snow-input"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+                <div class="form-snow-group">
+                  <label for="sleigh-email" class="frost-label"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    id="sleigh-email"
+                    name="email"
+                    class="snow-input"
+                    placeholder="info@RiskSkillNet.com"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-snow-group full-width">
+                <label for="sleigh-message" class="frost-label">Message</label>
+                <textarea
+                  id="sleigh-message"
+                  name="message"
+                  class="snow-textarea"
+                  rows="6"
+                  placeholder="Tell us about your inquiry..."
+                  required
+                ></textarea>
+              </div>
+              <div class="form-submit-wrapper">
+                <button type="submit" class="frost-submit-btn">
+                  <span class="submit-btn-text">Send Message</span>
+                  <span class="submit-btn-icon">→</span>
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       </section>
     </main>

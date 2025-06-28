@@ -3,32 +3,38 @@
     {
       "title": "New Winter Track Released",
       "content": "We've added a brand new track called 'Aurora Borealis Run' featuring stunning northern lights effects and challenging terrain. Race through the magical arctic landscape!",
-      "date": "December 15, 2024"
+      "date": "December 15, 2024",
+      "image": "frozen-1.jpg"
     },
     {
       "title": "Physics Engine Improvements",
       "content": "Enhanced the sleigh physics for more realistic snow interaction. Now you'll feel the difference between fresh powder and packed ice!",
-      "date": "December 10, 2024"
+      "date": "December 10, 2024",
+      "image": "frozen-2.jpg"
     },
     {
       "title": "Performance Optimization",
       "content": "Major performance improvements across all devices. Reduced loading times and smoother frame rates for the best gaming experience.",
-      "date": "December 5, 2024"
+      "date": "December 5, 2024",
+      "image": "frozen-3.jpg"
     },
     {
       "title": "New Sleigh Customizations",
       "content": "Unlock new sleigh designs and festive decorations. Personalize your ride with Christmas lights, ornaments, and special effects!",
-      "date": "November 30, 2024"
+      "date": "November 30, 2024",
+      "image": "frozen-4.jpg"
     },
     {
       "title": "Multiplayer Mode Beta",
       "content": "Test our new multiplayer racing mode! Compete with friends in real-time races across all available tracks. More features coming soon!",
-      "date": "November 25, 2024"
+      "date": "November 25, 2024",
+      "image": "frozen-5.jpg"
     },
     {
       "title": "Bug Fixes and Stability",
       "content": "Fixed various minor bugs and improved overall game stability. Your feedback helps us make the game better every day!",
-      "date": "November 20, 2024"
+      "date": "November 20, 2024",
+      "image": "frozen-6.jpg"
     }
   ]
 }
